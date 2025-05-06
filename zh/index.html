@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Misaka Mikoto's Birthday Website - CMSK</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style/all.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <script src="../script/all.js"></script>
+    <!-- <script src="https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/script/qrcode.js"></script> -->
+    <!-- <script src="https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/script/media-player.js"></script> -->
+    <!-- List -->
+    <script>
+        var bgm_list = {
+            0: "https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/audio/",
+            1: "only_my_railgun.m4a",
+            2: "level5_-judgelight-.m4a",
+            3: "dear_my_friend.mp3",
+            4: "real_force.m4a",
+            5: "sister's_noise.mp3",
+            6: "eternal_reality.mp3",
+            7: "grow_slowly.m4a",
+            8: "links.mp3",
+            9: "final_phase.mp3",
+            10: "dual_existence.mp3",
+            11: "nameless_story.m4a",
+            12: "青嵐のあとで.m4a"
+        };
+        var background_list = {
+            // 0: "https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/image/other/misaka-mikoto-birthday/background/",
+            0: "../image/other/misaka-mikoto-birthday/background/",
+            1: "../../../background/37de93df07816b23a7a203042f0de634ee6b017b94c39f213b85db626f0c4a91.png",
+            2: "",
+            3: "",
+            4: "",
+            5: "",
+            6: "",
+            7: "",
+            8: "",
+            9: "",
+            10: "",
+            11: "",
+            12: "",
+            13: ""
+        };
+        var logo_list = {
+            // 0: "https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/image/other/misaka-mikoto-birthday/logo/",
+            0: "../image/other/misaka-mikoto-birthday/logo/",
+            1: "D.svg",
+            2: "S.svg",
+            3: "T.svg"
+        };
+    </script>
+</head>
+
+<body>
+    <!-- noscript -->
+    <noscript class="noscript">
+        <h2 class="noscript">
+            你的浏览器不支持或未启用JavaScript
+            <br>
+            请启用JavaScript后重新加载页面
+            <br>
+            <br>
+            <br>
+            <a id="help-javascript"
+                href="https://support.microsoft.com/zh-cn/office/%E5%90%AF%E7%94%A8-javascript-7bb9ee74-6a9e-4dd1-babf-b0a1bb136361">
+                获取更多帮助
+            </a>
+            <style>
+                #help-javascript {
+                    font-size: 17px;
+                    color: black;
+                    border: 5px solid red;
+                    border-radius: 5px;
+                }
+
+                #help-javascript:hover {
+                    color: rgb(0, 255, 0);
+                }
+            </style>
+            <div class="noscript-link">
+                Powered&nbsp;by
+                <a href="https://github.com/MSK-10032" target="_blank">
+                    <img src="https://avatars.githubusercontent.com/MSK-10032" class="noscript-avatar">
+                    <span class="MC">
+                        CMSK
+                    </span>
+                </a>
+            </div>
+            <span class="copyright">
+                <b>
+                    Copyright&copy;&nbsp;by
+                    <a href="https://github.com/MSK-10032" target="_blank" class="MC">
+                        CMSK
+                    </a>
+                    . All Right Reserved
+                </b>
+            </span>
+        </h2>
+        <style>
+            @font-face {
+                font-family: 'MC';
+                src: url('/font/MC.ttf');
+            }
+
+            .noscript {
+                user-select: none;
+                position: fixed;
+                text-align: center;
+                z-index: 114514;
+                background-color: rgb(50, 50, 50);
+                color: white;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+
+            .noscript a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .noscript-link {
+                margin-top: 50px;
+            }
+
+            .noscript-avatar {
+                background-color: black;
+                width: 20px;
+                border-radius: 50%;
+                margin-bottom: -2px;
+
+            }
+
+            .copyright {
+                font-size: 15px;
+            }
+
+            .MC {
+                font-family: 'MC';
+            }
+        </style>
+    </noscript>
+    <!-- BGM -->
+    <div id="cmsk_bgm" title="BGM">
+        <audio autoplay></audio>
+        <div class="bgm_button bgm_play" onclick="toggleBGM()">
+            <svg style="width: 50px; height: 50px; cursor: pointer" viewBox="0 0 24 24">
+                <path d="M9 7l8 5-8 5z" fill="#000" />
+            </svg>
+        </div>
+        <div class="bgm_button bgm_pause" onclick="toggleBGM()" style="display: none">
+            <svg style="width: 50px; height: 50px; cursor: pointer" viewBox="0 0 24 24">
+                <rect x="8" y="8" width="3" height="8" fill="#000" />
+                <rect x="13" y="8" width="3" height="8" fill="#000" />
+            </svg>
+        </div>
+        <style>
+            #cmsk_bgm {
+                position: fixed;
+                z-index: 114;
+                top: 2vw;
+                left: 2vw;
+                display: flex;
+                align-items: center;
+            }
+
+            .bgm_button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid #000;
+                background-color: #fff;
+                padding: 0;
+            }
+        </style>
+        <script>
+            const bgm = document.querySelector("#cmsk_bgm audio");
+            bgm.src = bgm_list[0] + bgm_list[1];
+            const playButton = document.querySelector("#cmsk_bgm .bgm_play");
+            const pauseButton = document.querySelector("#cmsk_bgm .bgm_pause");
+
+            bgm.play();
+            updateBGMButton();
+
+            function toggleBGM() {
+                if (bgm.paused) {
+                    bgm.play();
+                } else {
+                    bgm.pause();
+                }
+                updateBGMButton();
+            }
+
+            function updateBGMButton() {
+                if (bgm.paused) {
+                    playButton.style.display = "";
+                    pauseButton.style.display = "none";
+                } else {
+                    playButton.style.display = "none";
+                    pauseButton.style.display = "";
+                }
+            }
+
+            bgm.addEventListener("play", updateBGMButton);
+            bgm.addEventListener("pause", updateBGMButton);
+        </script>
+    </div>
+    <!-- Change Page Button -->
+    <div id="change_page_button">
+        <div class="change_page_button up" onclick="page_up()">▲</div>
+        <div class="change_page_button down" onclick="page_down()">▼</div>
+    </div>
+    <!-- main -->
+    <main>
+        <iframe id="loading" src="../loading/"></iframe>
+        <div class="page pd-1"></div>
+        <div class="page pd-2 hide"></div>
+        <div class="page pd-3 hide"></div>
+        <div class="page pd-4 hide"></div>
+        <div class="page pd-5 hide"></div>
+        <div class="page pd-6 hide"></div>
+        <div class="page pd-7 hide"></div>
+        <div class="page pd-8 hide"></div>
+        <div class="page pd-9 hide"></div>
+        <div class="page pd-10 hide"></div>
+        <div class="page pd-11 hide"></div>
+        <div class="page pd-12 hide"></div>
+        <script>
+            var page = document.querySelectorAll(".page"),
+                msk_bgm = document.querySelector("#cmsk_bgm audio");
+
+            // setting background
+            for (var i = 0; i < page.length; i++) {
+                page[i].style.backgroundImage = "url(" + background_list[0] + background_list[i + 1] + ")";
+            }
+
+            // change page
+            // loading
+            // open loading
+            function loading_open(p) {
+                document.querySelector("iframe#loading").src = `../loading/?${p}`;
+                document.querySelector("iframe#loading").classList.remove('hide');
+            }
+            // close loading
+            function loading_close() {
+                document.querySelector("iframe#loading").classList.add('hide');
+            }
+            // page up
+            function page_up() {
+                if (!page[0].classList.contains("hide")) {
+                    for (let i = 0; i < page.length; i++) {
+                        page[i].classList.add("hide");
+                    }
+                    page[page.length - 1].classList.remove("hide");
+                    updateBGM(page.length - 1);
+                } else {
+                    for (let i = page.length - 1; i > 0; i--) {
+                        if (!page[i].classList.contains("hide")) {
+                            page[i].classList.add("hide");
+                            page[i - 1].classList.remove("hide");
+                            updateBGM(i - 1);
+                            if (i - 1 === 0) loading_open('D');
+                            if (i - 1 === 4) loading_open('S');
+                            if (i - 1 === 8) loading_open('T');
+                            break;
+                        }
+                    }
+                }
+            }
+            // page down
+            function page_down() {
+                if (!page[page.length - 1].classList.contains("hide")) {
+                    for (let i = 0; i < page.length; i++) {
+                        page[i].classList.add("hide");
+                    }
+                    page[0].classList.remove("hide");
+                    updateBGM(0);
+                    loading_open('D');
+                } else {
+                    for (let i = 0; i < page.length - 1; i++) {
+                        if (!page[i].classList.contains("hide")) {
+                            page[i].classList.add("hide");
+                            page[i + 1].classList.remove("hide");
+                            updateBGM(i + 1);
+                            if (i + 1 === 0) loading_open('D');
+                            if (i + 1 === 4) loading_open('S');
+                            if (i + 1 === 8) loading_open('T');
+                            break;
+                        }
+                    }
+                }
+            }
+            // change BGM
+            function updateBGM(index) {
+                msk_bgm.src = bgm_list[0] + bgm_list[index + 1];
+                msk_bgm.play();
+                msk_bgm.onended = null;
+                if (index < page.length - 1) {
+                    msk_bgm.onended = function () {
+                        page_down();
+                    };
+                } else {
+                    msk_bgm.onended = function () {
+                        for (let i = 0; i < page.length; i++) {
+                            page[i].classList.add("hide");
+                        }
+                        page[0].classList.remove("hide");
+                        updateBGM(0);
+                    };
+                }
+            }
+
+            // set logo
+        </script>
+    </main>
+</body>
+
+</html>
