@@ -299,10 +299,10 @@
                 msk_bgm.src = bgm_list[0] + bgm_list[index + 1];
                 msk_bgm.play();
                 msk_bgm.onended = null;
-                msk_bgm.onended = function () {
-                    page_down();
-                };
             }
+            msk_bgm.onended = function () {
+                page_down();
+            };
 
             // set logo
         </script>
