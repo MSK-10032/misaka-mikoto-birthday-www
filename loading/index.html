@@ -13,6 +13,9 @@
       return true;
     };
   </script>
+  <script>
+    var logo_path = 'https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/image/other/misaka-mikoto-birthday/logo/';
+  </script>
 </head>
 
 <body id="layout1">
@@ -41,13 +44,13 @@
         <script>
           lgi = document.querySelector(".loading__logo img");
           if (location.search.replace("?", "") == "" || location.search.replace("?", "") == "D") {
-            lgi.src = `https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/image/other/misaka-mikoto-birthday/logo/D.svg`;
+            lgi.src = `${logo_path}D.svg`;
           }
           if (location.search.replace("?", "") == "S") {
-            lgi.src = `https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/image/other/misaka-mikoto-birthday/logo/S.svg`;
+            lgi.src = `${logo_path}S.svg`;
           }
           if (location.search.replace("?", "") == "T") {
-            lgi.src = `https://cf-1.cdn.御坂网络.御坂美琴.cloudns.org/image/other/misaka-mikoto-birthday/logo/T.svg`;
+            lgi.src = `${logo_path}T.svg`;
           }
         </script>
       </div>
